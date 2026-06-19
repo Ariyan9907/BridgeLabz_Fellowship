@@ -19,7 +19,7 @@ public class DefaultValuesPrim {
         System.out.println("Float:"+d.fl);
         System.out.println("Double:"+d.dl);
         System.out.println("Char:"+d.ch);
-        System.out.println("Boolean:"+d.by);
+        System.out.println("Boolean:"+d.bl);
 
     }
 }
