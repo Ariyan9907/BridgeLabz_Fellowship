@@ -1,5 +1,7 @@
 package com.src.employeewage;
 
+import java.util.Scanner;
+
 class EmployeeCreate{
     int rate;
     int hour;
@@ -31,7 +33,21 @@ class EmployeeCreate{
 public class Employee {
     public static void main(String[] args) {
         EmployeeCreate e = new EmployeeCreate();
-        System.out.println("Part time Wage:"+e.calcPartTime());
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+
+        switch (n){
+            case 1:
+                System.out.println(e.checkAttendence());
+                break;
+            case 2:
+                System.out.println(e.calcDailyWage());
+                break;
+            case 3:
+                System.out.println(e.calcPartTime());
+                break;
+        }
+
 
     }
 }
