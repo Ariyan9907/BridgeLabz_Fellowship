@@ -34,13 +34,24 @@ class EmployeeCreate{
         return days*hour*rate;
     }
 
+    int totalWage(){
+        int rate=20;
+        int days=0;
+
+        while(days<20&&hour<100){
+            hour+=8;
+            days++;
+        }
+        return days*hour*rate;
+    }
+
 
 }
 
 public class Employee {
     public static void main(String[] args) {
         EmployeeCreate e = new EmployeeCreate();
-        System.out.println(e.calcMonthWage());
+        System.out.println(e.totalWage());
 
     }
 }
