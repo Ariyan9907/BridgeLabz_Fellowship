@@ -5,12 +5,19 @@ class EmployeeCreate{
         System.out.println("Welcome Employee");
     }
 
+    String checkAttendence(){
+        int atend=(int)(Math.random()*2);
+
+        return atend==0?"Absent":"Present";
+    }
+
+
 }
 
 public class Employee {
     public static void main(String[] args) {
         EmployeeCreate e = new EmployeeCreate();
-        e.displayWelcome();
+        System.out.println(e.checkAttendence());
 
     }
 }
