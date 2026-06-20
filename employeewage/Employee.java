@@ -27,27 +27,20 @@ class EmployeeCreate{
         return  rate*hour;
     }
 
+    int calcMonthWage(){
+        rate=20;
+        hour=8;
+        int days=20;
+        return days*hour*rate;
+    }
+
 
 }
 
 public class Employee {
     public static void main(String[] args) {
         EmployeeCreate e = new EmployeeCreate();
-        Scanner sc = new Scanner(System.in);
-        int n=sc.nextInt();
-
-        switch (n){
-            case 1:
-                System.out.println(e.checkAttendence());
-                break;
-            case 2:
-                System.out.println(e.calcDailyWage());
-                break;
-            case 3:
-                System.out.println(e.calcPartTime());
-                break;
-        }
-
+        System.out.println(e.calcMonthWage());
 
     }
 }
