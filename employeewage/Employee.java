@@ -19,13 +19,19 @@ class EmployeeCreate{
         return rate*hour;
     }
 
+    int calcPartTime(){
+        rate=20;
+        hour=4;
+        return  rate*hour;
+    }
+
 
 }
 
 public class Employee {
     public static void main(String[] args) {
         EmployeeCreate e = new EmployeeCreate();
-        System.out.println("Daily Wage:"+e.calcDailyWage());
+        System.out.println("Part time Wage:"+e.calcPartTime());
 
     }
 }
