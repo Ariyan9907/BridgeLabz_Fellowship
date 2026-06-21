@@ -35,32 +35,57 @@ public class SnakeLadder {
         return position;
     }
 
-    static boolean checkWin(int position){
-        if(position==100){
+    static boolean checkWin(int p1,int p2){
+        if(p1==100||p2==100){
             return true;
         }
         return false;
+    }
+
+    static  String winner(int p1,int p2){
+        if(p1==100){
+            return "Player 1";
+        }
+        return  "Player 2";
     }
 
 
 
 
     public static void main(String[] args) {
-        int position=initialPosition();
+        int p1=initialPosition();
+        int p2=initialPosition();
         boolean isWin=false;
-        int count=0;
+        int p1count=0;
+        int p2count=0;
 
         while(!isWin){
             int dice=rollDice();
-            count++;
-            position=updatePosition(position,dice);
-            System.out.println("Dice: "+dice);
-            System.out.println("Position: "+position);
-            isWin=checkWin(position);
+            p1=updatePosition(p1,dice);
+            p1count++;
+            System.out.println("p1 Dice: "+dice);
+            System.out.println("p1 Position: "+p1);
+
+            dice=rollDice();
+            p2=updatePosition(p2,dice);
+            p2count++;
+            System.out.println("p2 Dice: "+dice);
+            System.out.println("p2 Position: "+p2);
+
+            isWin=checkWin(p1,p2);
 
         }
 
-        System.out.println("You Won with rolling count: "+count);
+        int rollcount=0;
+        String winner=winner(p1,p2);
+        if(winner.equals("Player 1")){
+            rollcount=p1count;
+        }
+        else{
+            rollcount=p2count;
+        }
+
+        System.out.println(winner+" Won with rolling count: "+rollcount);
 
     }
 }
