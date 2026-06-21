@@ -20,6 +20,21 @@ class GeomtricOp{
             System.out.println("Both are not equal lines");
         }
     }
+
+    void checkComparision(){
+        Double l1=calcLength(1,2,4,6);
+        Double l2=calcLength(2,3,8,7);
+
+        if(l1.compareTo(l2)==0){
+            System.out.println("Both are equal Lines");
+        }
+        else if(l1.compareTo(l2)>0){
+            System.out.println("First line is grater");
+        }
+        else{
+            System.out.println("Second line is grater");
+        }
+    }
 }
 
 
@@ -27,7 +42,7 @@ class GeomtricOp{
 public class LineGeometry {
     public static void main(String[] args) {
         GeomtricOp g = new GeomtricOp();
-        g.checkEqulatityofTwoLines();
+        g.checkComparision();
 
     }
 }
