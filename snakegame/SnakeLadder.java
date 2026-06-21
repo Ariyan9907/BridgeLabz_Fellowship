@@ -3,7 +3,7 @@ package com.src.snakegame;
 public class SnakeLadder {
     static final int noPlay=0;
     static final int ladder=1;
-    static final int sneak=2;
+    static final int snake=2;
 
     static int initialPosition(){
         return 0;
@@ -46,17 +46,17 @@ public class SnakeLadder {
 
 
     public static void main(String[] args) {
-        int postion=initialPosition();
+        int position=initialPosition();
         boolean isWin=false;
         int count=0;
 
         while(!isWin){
             int dice=rollDice();
             count++;
-            postion=updatePosition(postion,dice);
+            position=updatePosition(position,dice);
             System.out.println("Dice: "+dice);
-            System.out.println("Position: "+postion);
-            isWin=checkWin(postion);
+            System.out.println("Position: "+position);
+            isWin=checkWin(position);
 
         }
 
