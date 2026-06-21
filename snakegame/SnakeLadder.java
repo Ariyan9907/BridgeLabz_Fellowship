@@ -21,7 +21,7 @@ public class SnakeLadder {
             return position;
         }
         else if(option==ladder){
-
+            position+=dice;
             if(position>100){
                 position=oldPos;
             }
@@ -35,15 +35,32 @@ public class SnakeLadder {
         return position;
     }
 
-
+    static boolean checkWin(int position){
+        if(position==100){
+            return true;
+        }
+        return false;
+    }
 
 
 
 
     public static void main(String[] args) {
-        int position=initialPosition();
-        int dice=rollDice();
-        System.out.println(dice);
+        int postion=initialPosition();
+        boolean isWin=false;
+        int count=0;
+
+        while(!isWin){
+            int dice=rollDice();
+            count++;
+            postion=updatePosition(postion,dice);
+            System.out.println("Dice: "+dice);
+            System.out.println("Position: "+postion);
+            isWin=checkWin(postion);
+
+        }
+
+        System.out.println("You Won with rolling count: "+count);
 
     }
 }
